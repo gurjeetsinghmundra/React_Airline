@@ -2,9 +2,9 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light p-3 ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Skywings</a>
+    <a class="navbar-brand" href="#"><strong>Skywings</strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,15 +16,18 @@ function Navbar() {
         <li class="nav-item">
           <a class="nav-link active" href="#">ABOUT</a>
         </li>
-        
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link active" href="#">OFFERS</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">SEATS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">CONTACT</a>
+        </li>
+        
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <button type="button" class="btn btn-dark ">BOOK TRIP</button>
     </div>
   </div>
 </nav>

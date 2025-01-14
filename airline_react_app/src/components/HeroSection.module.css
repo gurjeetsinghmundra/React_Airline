@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+header {
+  margin-top: 5rem;
+  padding-inline: 1rem;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/*  */
+.container {
+    background-image: url('../assests/header-bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 50px;
+    margin: 5px 20px 30px 20px;
+  }
+  
+  .textContainer {
+    display: grid;
+    padding: 4rem 1rem;
+  }
+  
+  .headline p{
+    margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  }
+  
+  .subheadline h1 {
+    margin-bottom: 2rem;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 5.5rem;
+  text-align: center;
+  }
+  
+  .button {
+    background-color: blue;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  /*  */
+
+  .header__image {
+    grid-column: 4/8;
+    position: relative;
+    isolation: isolate;
+    height: 100%;
+  }
+
+  .header__image img {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    height: 100%;
+    width: unset;
+  }
+ 
