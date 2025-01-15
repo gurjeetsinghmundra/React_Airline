@@ -2,35 +2,27 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light p-3 ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><strong>Skywings</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">ABOUT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">OFFERS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">SEATS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">CONTACT</a>
-        </li>
-        
-      </ul>
-      <button type="button" class="btn btn-dark ">BOOK TRIP</button>
+    <nav>
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="#" class="logo">Skywings</a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
     </div>
-  </div>
-</nav>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#tour">TOUR</a></li>
+      <li><a href="#package">PACKAGE</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#">BOOK TRIP</a></li>
+    </ul>
+    <div class="nav__btns">
+      <button class="btn">BOOK TRIP</button>
+    </div>
+  </nav>
   )
 }
 

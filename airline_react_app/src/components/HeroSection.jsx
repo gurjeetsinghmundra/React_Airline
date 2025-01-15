@@ -5,16 +5,24 @@ import logo from '../assests/header.png'
 
 function HeroSection() {
   return (
-    <div className={styles.container}>
-      <div className={styles.textContainer}>
-        <p className={styles.headline}>Elevate Your Travel Journey</p>
-        <h1 className={styles.subheadline}>Experience The Magic Of Flight!</h1>
-        <button className={styles.button}>Book A Trip Now</button>
-         <div class={styles.header__image}>
+   
+    <header id="home">
+      <div class="header__container">
+        <div class="header__content">
+          <p>ELEVATE YOUR TRAVEL JOURNEY</p>
+          <h1>Experience The Magic Of Flight!</h1>
+          <div class="header__btns">
+            <button class="btn">Book A Trip Now</button>
+            <a href="#">
+              <span><i class="ri-play-circle-fill"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="header__image">
           <img src={logo} alt="header" />
-        </div>  
+        </div>
       </div>
-    </div>
+    </header>
   )
 }
 
