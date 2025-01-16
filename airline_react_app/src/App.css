@@ -632,7 +632,8 @@ footer {
 @media (width > 768px) {
   nav {
     position: static;
-    padding: 2rem 1rem;
+    /* change */
+    padding: 1.2rem 1rem;
     max-width: var(--max-width);
     margin-inline: auto;
     display: flex;
