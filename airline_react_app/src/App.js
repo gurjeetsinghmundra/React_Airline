@@ -6,6 +6,9 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Seats from './components/Seats';
 import User from './components/User/User';
+import Flight from './components/Flight/Flight';
+
+
 
 
  const routes = createBrowserRouter([
@@ -16,6 +19,10 @@ import User from './components/User/User';
   {
       path:"/register",
       element:<><Navbar/><User/></>
+  },
+  {
+    path:"/flight",
+    element:<><Navbar/><Flight/></>
   }
 ])
 

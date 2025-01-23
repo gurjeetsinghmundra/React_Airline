@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { addUser, getUsers } from './UserService'
+import { addUser, getUsers } from '../../services/UserService'
 import './UserForm.css';
 import logo from '../../assests/ticketCounter.jpg'
-
-
 
 
 
