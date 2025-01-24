@@ -2,11 +2,15 @@ import './App.css';
 import './components/HeroSection.module.css'
 import { createBrowserRouter ,RouterProvider } from 'react-router-dom'
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+// import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Seats from './components/Seats';
 import User from './components/User/User';
 import Flight from './components/Flight/Flight';
+import About from './components/About';
+import NotFound from './components/NotFound';
+import Destinations from './components/Destinations';
+import Footer from './components/Footer';
 
 
 
@@ -14,7 +18,7 @@ import Flight from './components/Flight/Flight';
  const routes = createBrowserRouter([
   {
       path:"/",
-      element:<><Navbar/> <HeroSection/><Seats/><Header/></>
+      element:<><Navbar/> <HeroSection/><About/><Seats/><Destinations/><Footer/></>
   },
   {
       path:"/register",
@@ -23,6 +27,10 @@ import Flight from './components/Flight/Flight';
   {
     path:"/flight",
     element:<><Navbar/><Flight/></>
+  },
+  {
+    path: "*",  //jitne routes banaye hai usko chordke saare
+    element: <NotFound />
   }
 ])
 

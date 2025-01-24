@@ -14,8 +14,8 @@ function Navbar() {
     <ul class="nav__links" id="nav-links">
       <li><a href="#home">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
-      <li><a href="#tour">TOUR</a></li>
-      <li><a href="#package">PACKAGE</a></li>
+      <li><a href="#tour">SEATS</a></li>
+      <li><a href="#package">DESTINATIONS</a></li>
       <li><a href="#contact">CONTACT</a></li>
       <li><a href="#">BOOK TRIP</a></li>
     </ul>
