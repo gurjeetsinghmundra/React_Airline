@@ -3,10 +3,14 @@ import './FlightCard.css'
 
 
 function FlightItems({ flightName, departureAirport, arrivalAirport,
-    departureTime, arrivalTime, availableSeats }) {
+    departureTime, arrivalTime, availableSeats ,onSelectFlight}) {
 
     return (
+
+            
         <div>
+
+            
 
             <div className="flight-card">
                 <div className="card">
@@ -25,8 +29,12 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
                             <div className="float-left mt-1">
                                 Seats Available: <strong>{availableSeats}</strong>
                             </div>
-                        </div>
+                            <br />
+                            <button type="button" class="btn">Update</button>
+                            <button type="button" class="btn ms-5">Delete</button>
+                            </div>
                     </div>
+                   
                 </div>
             </div>
 

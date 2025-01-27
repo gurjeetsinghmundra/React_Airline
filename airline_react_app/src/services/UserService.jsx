@@ -22,3 +22,14 @@ export const addUser =(user)=>{
     
 }
 
+export const uploadUserImage =(user_link,file)=>
+{
+    let formData= new FormData();
+    formData.append("userImage",file);
+
+    return fetch(user_link+"/image",{
+        method:"POST",
+        body:formData
+    }).then(data=>data.text())
+
+}

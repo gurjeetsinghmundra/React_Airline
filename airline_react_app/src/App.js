@@ -11,6 +11,8 @@ import About from './components/About';
 import NotFound from './components/NotFound';
 import Destinations from './components/Destinations';
 import Footer from './components/Footer';
+import AllUser from './components/User/AllUser';
+import FlightForm from './components/Flight/FlightForm';
 
 
 
@@ -22,11 +24,11 @@ import Footer from './components/Footer';
   },
   {
       path:"/register",
-      element:<><Navbar/><User/></>
+      element:<><Navbar/><User/><AllUser/></>
   },
   {
     path:"/flight",
-    element:<><Navbar/><Flight/></>
+    element:<><Navbar/><FlightForm/><Flight/></>
   },
   {
     path: "*",  //jitne routes banaye hai usko chordke saare
