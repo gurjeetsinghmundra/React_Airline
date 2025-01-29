@@ -5,8 +5,13 @@ import './FlightCard.css'
 function FlightItems({ flightName, departureAirport, arrivalAirport,
     departureTime, arrivalTime, availableSeats ,onSelectFlight}) {
 
-    return (
+        const onSelectUpdate=(link)=>{
+            console.log(link);
+        }
 
+        
+
+    return (
             
         <div>
 
@@ -30,7 +35,11 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
                                 Seats Available: <strong>{availableSeats}</strong>
                             </div>
                             <br />
-                            <button type="button" class="btn">Update</button>
+                            <button  className='btn btn-success'
+                    //  onClick={onSelectUpdate(product_link)}>  //this will print all links
+                    onClick={()=>onSelectUpdate()}>  
+                    Update</button> 
+
                             <button type="button" class="btn ms-5">Delete</button>
                             </div>
                     </div>

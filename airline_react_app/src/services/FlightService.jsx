@@ -21,13 +21,34 @@ export const addFlightDetails =(flight)=>{
     .then(data=>data)
 }
 
-// Sorting
+// Sorting (A-z)
 
 export const getFlightsAtoZ = ()=>{
 
     return fetch("http://localhost:8080/flights/search/findByOrderByFlightNameAsc")
     .then(data=>data.json())
+    .then(data=>{
+        console.log(data["_embedded"]["flights"].length)
+        return data["_embedded"]["flights"]})
+
+}
+
+// Sorting(z-A)
+
+export const getFlightsZtoA = ()=>{
+
+    return fetch("http://localhost:8080/flights/search/findByOrderByFlightNameDesc")
+    .then(data=>data.json())
     .then(data=>data["_embedded"]["flights"])
 
 }
-    
+
+
+
+
+// 
+export const getFlightById=(flight_link)=>{
+    return fetch(flight_link)
+    .then(data=>data.json())
+    .then(data=>data)
+}

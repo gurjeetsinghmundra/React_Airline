@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import '../../services/FlightService'
-import { getFlightDetails, getFlightsAtoZ } from '../../services/FlightService'
+import { getFlightDetails, getFlightsAtoZ, getFlightsZtoA } from '../../services/FlightService'
 import FlightItems from './FlightItems'
 
 function Flight() {
 
   let [flights, setFlights] = useState([]);
 
-  let [selectedFlight, setSelectedFlight ]= useState(null); //or we can pass {} (object which has nothing)
+  let [selectedFlight, setSelectedFlight] = useState(null); //or we can pass {} (object which has nothing)
 
   const handleSelectFlight = (selectedFlight) => {
 
     setSelectedFlight(selectedFlight)
 
   }
-    const sort = async (choice) => {
 
-      switch (choice) {
-       
-        case 1:
-          setFlights(await getFlightsAtoZ());
-          break;
-        // case 2:
-        //   setFlights(await getProductsZtoA());
-        //   break;
-  
-      }
+
+  const sort = async (choice) => {
+
+    switch (choice) {
+
+      case 1:
+        setFlights(await getFlightsAtoZ());
+        break;
+      case 2:
+        setFlights(await getFlightsZtoA());
+        break;
+
+    }
   }
+
 
 
 
@@ -52,20 +55,29 @@ function Flight() {
 
 
 
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li onClick={() => { sort(1) }}><a class="dropdown-item" href="#">A-Z</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
+        {/* <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li onClick={() => { sort(1) }}><a class="dropdown-item" href="">A-Z</a></li>
+          <li><a class="dropdown-item" href="">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
-       
+
         </ul>
-      </div>
+      </div> */}
+
+      <ul className="list-group my-3">
+              <li className="list-group-item" onClick={() => { sort(1) }}>A-Z</li>
+              <li className="list-group-item" onClick={() => { sort(2) }}>Z-A</li>
+
+             
+            </ul> 
+        </div>
+
       <div className="container-fluid">
         <br />
 
         <div className="row">
           {flights.map((f) => (
-            
-            <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={f.flightName}>
+
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
               <FlightItems
                 flightName={f.flightName}
                 departureAirport={f.departureAirport}
@@ -75,6 +87,7 @@ function Flight() {
                 availableSeats={f.availableSeats}
                 // Sort
                 onSelectFlight={handleSelectFlight}
+                flight_link={f._links.self.href}
 
               />
             </div>
