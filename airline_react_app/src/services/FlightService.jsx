@@ -3,6 +3,8 @@
 const API_LINK = "http://localhost:8080/flights";
 
 
+// Getting Flights Details
+
 export const getFlightDetails = ()=>{
 
     return fetch(API_LINK)
@@ -10,6 +12,8 @@ export const getFlightDetails = ()=>{
     .then(data=>data._embedded.flights)
 
 }
+
+// AddingFlight In Cards
 
 export const addFlightDetails =(flight)=>{
 
@@ -20,6 +24,19 @@ export const addFlightDetails =(flight)=>{
     }).then(data=>data.json())
     .then(data=>data)
 }
+
+// Deleting Flights 
+
+export const deleteFlight =(flight_id_link)=>{
+
+    return fetch(flight_id_link,{method:"DELETE"})
+    .then(data=>data.json())
+    .then(data=>data)
+
+}
+
+
+
 
 // Sorting (A-z)
 
@@ -46,9 +63,12 @@ export const getFlightsZtoA = ()=>{
 
 
 
-// 
-export const getFlightById=(flight_link)=>{
-    return fetch(flight_link)
-    .then(data=>data.json())
-    .then(data=>data)
-}
+// // 
+// export const getFlightById=(flight_link)=>{
+//     return fetch(flight_link)
+//     .then(data=>data.json())
+//     .then(data=>data)
+// }
+
+
+

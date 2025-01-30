@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import '../../services/FlightService'
 import { getFlightDetails, getFlightsAtoZ, getFlightsZtoA } from '../../services/FlightService'
 import FlightItems from './FlightItems'
+import './FlightCard.css'
+
 
 function Flight() {
 
@@ -55,21 +57,21 @@ function Flight() {
 
 
 
-        {/* <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li onClick={() => { sort(1) }}><a class="dropdown-item" href="">A-Z</a></li>
-          <li><a class="dropdown-item" href="">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li onClick={() => { sort(1) }}><a class="dropdown-item" >A-Z</a></li>
+          <li onClick={() => { sort(2) }}><a class="dropdown-item" >Z-A</a></li>
+
 
         </ul>
-      </div> */}
+      </div>
 
-      <ul className="list-group my-3">
+      {/* <ul className="list-group my-3">
               <li className="list-group-item" onClick={() => { sort(1) }}>A-Z</li>
               <li className="list-group-item" onClick={() => { sort(2) }}>Z-A</li>
 
              
             </ul> 
-        </div>
+        </div> */}
 
       <div className="container-fluid">
         <br />

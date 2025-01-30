@@ -1,0 +1,97 @@
+.ticket {
+  width: 400px; /* Adjust as needed */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  overflow: hidden; /* Prevents content from overflowing rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.airline-logo {
+  display: flex;
+  align-items: center;
+}
+
+.airline-logo img {
+  height: 40px; /* Adjust logo size */
+  margin-right: 10px;
+}
+
+.airline-name p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.flight-info {
+  text-align: right;
+}
+
+.flight-number {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.prn {
+  font-size: 12px;
+}
+
+.main-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.passenger-info {
+  margin-bottom: 15px;
+}
+
+.passenger-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.board-time {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.route-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+}
+
+.departure,
+.arrival {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.footer {
+  background-color: #333; /* Darker background for footer */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+}

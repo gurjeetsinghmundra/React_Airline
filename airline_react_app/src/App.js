@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import AllUser from './components/User/AllUser';
 import FlightForm from './components/Flight/FlightForm';
 import BookingSeats from './components/Booking/BookingSeats';
+import Ticket from './components/Booking/Ticket';
 
 
 
@@ -35,11 +36,16 @@ import BookingSeats from './components/Booking/BookingSeats';
     path:"/booking",
     element:<><Navbar/><BookingSeats/></>
   },
+  {
+    path:"/ticket",
+    element:<><Navbar/><Ticket/></>
+  },
 
   {
     path: "*",  //jitne routes banaye hai usko chordke saare
     element: <NotFound />
   },
+  
   
 ])
 

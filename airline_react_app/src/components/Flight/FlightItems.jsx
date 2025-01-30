@@ -1,15 +1,16 @@
 import React from 'react'
 import './FlightCard.css'
+import { deleteFlight } from '../../services/FlightService';
 
 
 function FlightItems({ flightName, departureAirport, arrivalAirport,
-    departureTime, arrivalTime, availableSeats ,onSelectFlight}) {
+    departureTime, arrivalTime, availableSeats   ,flight_link}) {
 
-        const onSelectUpdate=(link)=>{
-            console.log(link);
-        }
+  const onSelectDelete = async(flight_id_link)=>{
+      const deletedFlight =await deleteFlight(flight_id_link)
+  }
 
-        
+
 
     return (
             
@@ -35,13 +36,16 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
                                 Seats Available: <strong>{availableSeats}</strong>
                             </div>
                             <br />
-                            <button  className='btn btn-success'
-                    //  onClick={onSelectUpdate(product_link)}>  //this will print all links
-                    onClick={()=>onSelectUpdate()}>  
-                    Update</button> 
+                            <button  className='btn btn-success'>             
+                                  Update</button> 
 
-                            <button type="button" class="btn ms-5">Delete</button>
-                            </div>
+                    {/* flight_link is a prop which we have passed above */}
+
+                    <button  className='btn btn-danger'
+                    // product_link is a prop which we have passed above
+                    onClick={()=>onSelectDelete(flight_link)}>
+                        Delete</button>                           
+                         </div>
                     </div>
                    
                 </div>
