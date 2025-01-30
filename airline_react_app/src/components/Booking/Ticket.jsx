@@ -1,13 +1,13 @@
 import React from "react";
 import "./Ticket.css";
-// import flightIcon from '../../assests/ticket.webp'
+import flightIcon from '../../assests/ticketLogo.jpg'
 
 const Ticket = () => {
   return (
     <div className="ticket">
       <div className="header">
         <div className="airline-logo">
-          <img src="your_logo.png" alt="Airline Logo" /> {/* Replace with your logo */}
+          <img src={flightIcon} alt="Airline Logo" /> {/* Replace with your logo */}
           <div className="airline-name">
             <p>INDIGO</p>
             <p>Economy Class</p>

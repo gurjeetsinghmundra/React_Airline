@@ -7,7 +7,7 @@ import d3 from '../assests/destination-3.jpg'
 
 function Destinations() {
   return (
-    <div><section class="section__container destination__container" id="about">
+    <div><section class="section__container destination__container" >
     <h2 class="section__header">Popular Destination</h2>
     <p class="section__description">
       Discover the Most Loved Destinations Around the Globe

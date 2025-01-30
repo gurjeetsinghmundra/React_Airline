@@ -61,14 +61,21 @@ export const getFlightsZtoA = ()=>{
 }
 
 
+// getting id of flight
+export const getFlightById=(flight_link)=>{
+    return fetch(flight_link)
+    .then(data=>data.json())
+    .then(data=>data)
+}
 
+// Update
 
-// // 
-// export const getFlightById=(flight_link)=>{
-//     return fetch(flight_link)
-//     .then(data=>data.json())
-//     .then(data=>data)
-// }
-
+export const updateFlight = (flight_id_link,flight)=>{
+    return fetch(flight_id_link,{
+        method:"PUT",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(flight)
+    })
+}
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Seats() {
+function Seats({setSearchQuery}) {
   return (
     <div>
          <section class="section__container booking__container">
@@ -14,7 +14,8 @@ function Seats() {
           <span><i class="ri-map-pin-line"></i></span>
           <div class="input__content">
             <div class="input__group">
-              <input type="text" />
+              <input type="text"  onChange={(e)=>{setSearchQuery(e.target.value)}}/> 
+              {/* {/* current input box kaa target value fetch karega */}
               <label>Location</label>
             </div>
             <p>Where are you goung?</p>

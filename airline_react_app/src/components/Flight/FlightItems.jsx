@@ -1,14 +1,22 @@
 import React from 'react'
 import './FlightCard.css'
-import { deleteFlight } from '../../services/FlightService';
+import { deleteFlight, getFlightById } from '../../services/FlightService';
 
 
 function FlightItems({ flightName, departureAirport, arrivalAirport,
-    departureTime, arrivalTime, availableSeats   ,flight_link}) {
+    departureTime, arrivalTime, availableSeats   ,flight_link ,onSelectFlight}) {
 
   const onSelectDelete = async(flight_id_link)=>{
       const deletedFlight =await deleteFlight(flight_id_link)
   }
+
+  const onSelectUpdate= async (link)=>{
+    // console.log(link);  ( will show all flight id links)
+    
+    let flight= await getFlightById(link);
+    onSelectFlight(flight) //passing product as an argument
+
+}
 
 
 
@@ -36,8 +44,10 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
                                 Seats Available: <strong>{availableSeats}</strong>
                             </div>
                             <br />
-                            <button  className='btn btn-success'>             
-                                  Update</button> 
+                            <button  className='btn btn-success'
+                    //  onClick={onSelectUpdate(flight_link)}>  //this will print all links
+                    onClick={()=>onSelectUpdate(flight_link)}>
+                         Update</button>  
 
                     {/* flight_link is a prop which we have passed above */}
 

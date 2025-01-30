@@ -6,7 +6,7 @@ import pic3 from '../assests/plan-3.jpg'
 function About() {
   return (
     <div>
-            <section class="section__container plan__container">
+            <section class="section__container plan__container" id="about">
       <p class="subheader">TRAVEL SUPPORT</p>
       <h2 class="section__header">Plan your travel with confidence</h2>
       <p class="description">

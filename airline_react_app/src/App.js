@@ -30,7 +30,7 @@ import Ticket from './components/Booking/Ticket';
   },
   {
     path:"/flight",
-    element:<><Navbar/><FlightForm/><Flight/></>
+    element:<><Navbar/><Flight/></>
   },
   {
     path:"/booking",
