@@ -17,14 +17,15 @@ function Navbar() {
       <li><a href="#about">ABOUT</a></li>
     
       {/* <li><a href="#package">DESTINATIONS</a></li> */}
-      <li><Link  to="/flight">FLIGHTS</Link></li>
-      <li><Link to="/booking" >SEATS</Link></li>
+      <li><a href="#flights">FLIGHTS</a></li>
+      <li><a href="#destinations">DESTINATIONS</a></li>
+      {/* <li><Link to="/booking" >DESTINATIONS</Link></li> */}
       <li><a href="#contact">CONTACT</a></li>
       <li><a href="#">BOOK TRIP</a></li>
     </ul>
     <div class="nav__btns">
       {/* <button class="btn" to="/register">BOOK TRIP</button> */}
-      <Link to="/register" className="btn">BOOK TRIP</Link>
+      <Link to="/register" className="btn">REGISTER</Link>
     </div>
   </nav>
   )

@@ -1,57 +1,58 @@
 import React from 'react'
 
-function Seats({setSearchQuery}) {
+function Seats() {
   return (
     <div>
          <section class="section__container booking__container">
-      <div class="booking__nav">
-        <span>Economy Class</span>
-        <span>Business Class</span>
-        <span>First Class</span>
+      <div class="booking__nav" id="flights">
+       
+        <span>Search For Flights</span>
       </div>
-      <form>
+      <form >
         <div class="form__group">
           <span><i class="ri-map-pin-line"></i></span>
           <div class="input__content">
             <div class="input__group">
-              <input type="text"  onChange={(e)=>{setSearchQuery(e.target.value)}}/> 
+              <input type="text" /> 
               {/* {/* current input box kaa target value fetch karega */}
-              <label>Location</label>
+              <label>From</label>
             </div>
-            <p>Where are you goung?</p>
+            <p>Where are you flying from?</p>
           </div>
         </div>
         <div class="form__group">
-          <span><i class="ri-user-3-line"></i></span>
+          <span><i class="ri-map-pin-line"></i></span>
           <div class="input__content">
             <div class="input__group">
-              <input type="number" />
-              <label>Travellers</label>
+              <input type="text"  />
+              <label>To</label>
             </div>
-            <p>Add guests</p>
-          </div>
-        </div>
-        <div class="form__group">
-          <span><i class="ri-calendar-line"></i></span>
-          <div class="input__content">
-            <div class="input__group">
-              <input type="text" />
-              <label>Departure</label>
-            </div>
-            <p>Add date</p>
+            <p>Where are you going?</p>
           </div>
         </div>
         <div class="form__group">
           <span><i class="ri-calendar-line"></i></span>
           <div class="input__content">
             <div class="input__group">
-              <input type="text" />
-              <label>Return</label>
+              <input type="date"   />
+              {/* <label>Departure Date</label> */}
             </div>
-            <p>Add date</p>
+            <p>Add Departure Date</p>
           </div>
         </div>
-        <button class="btn"><i class="ri-search-line"></i></button>
+        <div class="form__group">
+          <span><i class="ri-calendar-line"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="date"  />
+              {/* <label>Return Date</label> */}
+            </div>
+            {/* <p>Add date</p> */}
+            <p>Add Return Date</p>
+
+          </div>
+        </div>
+        <button type='submit' class="btn"><i class="ri-search-line"></i></button>
       </form>
     </section>
 

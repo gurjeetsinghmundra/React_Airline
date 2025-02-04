@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 // import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import Seats from './components/Seats';
-import User from './components/User/User';
+import User from './components/User/UserForm';
 import Flight from './components/Flight/Flight';
 import About from './components/About';
 import NotFound from './components/NotFound';
@@ -15,7 +15,10 @@ import AllUser from './components/User/AllUser';
 import FlightForm from './components/Flight/FlightForm';
 import BookingSeats from './components/Booking/BookingSeats';
 import Ticket from './components/Booking/Ticket';
-
+import UserForm from './components/User/UserForm';
+import Users from './components/User/User';
+import FlightDetails from './components/Flight/FlightDetails';
+import ShowingBooking from './components/Booking/ShowingBooking';
 
 
 
@@ -26,7 +29,7 @@ import Ticket from './components/Booking/Ticket';
   },
   {
       path:"/register",
-      element:<><Navbar/><User/><AllUser/></>
+      element:<><Navbar/><UserForm/><Users/></>
   },
   {
     path:"/flight",
@@ -39,6 +42,14 @@ import Ticket from './components/Booking/Ticket';
   {
     path:"/ticket",
     element:<><Navbar/><Ticket/></>
+  },
+  {
+    path:"flight/:flightNumber",
+    element:<><Navbar/><FlightDetails/></>
+  },
+  {
+    path:"booking/:flightNumber",
+    element:<><Navbar/><ShowingBooking/></>
   },
 
   {

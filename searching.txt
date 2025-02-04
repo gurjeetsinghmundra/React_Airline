@@ -1,0 +1,1 @@
+http://localhost:8080/flights/search/findBydepartureAirportAndArrivalAirportAndDepartureTimeAndArrivalTime?departureAirport=xyz&arrivalAirport=pqr&departureTime=rrtr&arrivalTime=hsdshdjs

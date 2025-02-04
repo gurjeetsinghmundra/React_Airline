@@ -1,10 +1,14 @@
 import React from 'react'
 import './FlightCard.css'
 import { deleteFlight, getFlightById } from '../../services/FlightService';
+import { useNavigate } from 'react-router-dom';
 
 
-function FlightItems({ flightName, departureAirport, arrivalAirport,
+function FlightItems({ flightNumber, flightName, departureAirport, arrivalAirport,
     departureTime, arrivalTime, availableSeats   ,flight_link ,onSelectFlight}) {
+
+    const navigate=useNavigate()
+
 
   const onSelectDelete = async(flight_id_link)=>{
       const deletedFlight =await deleteFlight(flight_id_link)
@@ -40,9 +44,9 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
                     </div>
                     <div className="card-footer">
                         <div className="clearfix">
-                            <div className="float-left mt-1">
+                            {/* <div className="float-left mt-1">
                                 Seats Available: <strong>{availableSeats}</strong>
-                            </div>
+                            </div> */}
                             <br />
                             <button  className='btn btn-success'
                     //  onClick={onSelectUpdate(flight_link)}>  //this will print all links
@@ -51,10 +55,15 @@ function FlightItems({ flightName, departureAirport, arrivalAirport,
 
                     {/* flight_link is a prop which we have passed above */}
 
-                    <button  className='btn btn-danger'
+                    <button  className='btn btn-danger ms-4'
                     // product_link is a prop which we have passed above
                     onClick={()=>onSelectDelete(flight_link)}>
-                        Delete</button>                           
+                        Delete</button>  
+                        
+                        <button href="#" className="btn btn-primary btn-lg menu-btn mt-4 ms-5 "
+                        onClick={()=>{navigate(`/flight/${flightNumber}`)}}
+                        >View Details</button>
+                         
                          </div>
                     </div>
                    

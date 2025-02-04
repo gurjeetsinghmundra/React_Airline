@@ -13,13 +13,13 @@ function HeroSection() {
           <p>ELEVATE YOUR TRAVEL JOURNEY</p>
           <h1>Experience The Magic Of Flight!</h1>
           <div class="header__btns">
-            <button class="btn" >Book A Trip Now</button>
+          <button class="btn" >Book A Trip Now</button>
 
             
-
-            <a href="#">
+            
+            <Link to="/flight">
               <span><i class="ri-play-circle-fill"></i></span>
-            </a>
+              </Link>
           </div>
         </div>
         <div class="header__image">
