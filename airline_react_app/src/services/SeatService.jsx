@@ -10,3 +10,10 @@ export const getSeats = (id)=>{
 }
 
 
+export const updateSeat = (seat_id_link,seat)=>{
+    return fetch(seat_id_link,{
+        method:"PUT",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(seat)
+    })
+}

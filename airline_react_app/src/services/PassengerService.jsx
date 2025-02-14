@@ -55,3 +55,12 @@ export const allocateSeat = (passengerLink, seatLink) => {
     })
    
 };
+
+
+
+// getting id of seat
+export const fetchSeatById =(seat_link)=>{
+    return fetch(seat_link)
+    .then(data=>data.json())
+    .then(data=>data)
+}

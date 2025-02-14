@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import './FlightDetails.css';
 import BookingSeats from "../Booking/BookingSeats";
-import { addPassenger, allocateSeat } from "../../services/PassengerService";
+import { addPassenger, allocateSeat, fetchSeatById } from "../../services/PassengerService";
+import { updateSeat } from "../../services/SeatService";
 
 function FlightDetails({}) {
 
@@ -88,11 +89,25 @@ function FlightDetails({}) {
             // onAddPassenger();
             allocateSeat(data._links.self.href,`http://localhost:8080/seats/${selectedSeatForPassenger}`)
 
-            return data;
+           fetchSeatById(`http://localhost:8080/seats/${selectedSeatForPassenger}`).then(data=>{
+           updateSeat(data._links.self.href,{...data,["occupied"]:true})
+          })
+          setPassengerDetails({
+            passengerFirstName: "",
+            passengerLastName: "",
+            dateOfBirth: "",
+            gender: "",
+            passportNumber: "",
+            nationality: "",
+            phoneNumber: "",
+            address: "",
+        });
         })
   setShowBookingForm(false);
 
     }
+
+    
 
 
 
@@ -150,6 +165,7 @@ function FlightDetails({}) {
                   onChange={handleInputChange}
                   required
                 />
+                <label htmlFor="dateOfBirth">DOB (YYYY-MM-DD)</label>
                 <input
                   type="date"
                   name="dateOfBirth"

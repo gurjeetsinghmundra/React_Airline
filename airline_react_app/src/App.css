@@ -91,6 +91,7 @@ nav {
   background-color: var(--primary-color);
   transition: transform 0.5s;
   z-index: -1;
+  margin-top: 10px;
 }
 
 .nav__links.open {
@@ -407,11 +408,13 @@ footer {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-dark);
+  margin-left: 25px;
 }
 
 .footer__links {
   display: grid;
   gap: 1rem;
+
 }
 
 .footer__links a {
@@ -419,6 +422,7 @@ footer {
   align-items: center;
   gap: 10px;
   color: var(--text-light);
+ 
 }
 
 .footer__links a:hover {
@@ -510,6 +514,7 @@ footer {
 
   .nav__logo .logo {
     color: var(--text-dark);
+    font-size: 27px;
   }
 
   .nav__menu__btn {

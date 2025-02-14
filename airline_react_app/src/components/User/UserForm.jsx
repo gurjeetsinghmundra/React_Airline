@@ -19,8 +19,11 @@ function UserForm() {
             password: e.target.password.value,
             age: e.target.age.value
         }).then(data => {
-            uploadUserImage(data._links.self.href, e.target.userImage.files[0])
+            console.log(data._links.self.href, e.target.userImage.files[0]);
+           uploadUserImage(data._links.self.href, e.target.userImage.files[0])
             setUser(data);
+           
+            return data;
         })
     }
 
@@ -114,9 +117,7 @@ function UserForm() {
                         </form>
 
                     </div>
-                    <div class="col ">
-                        <img src={logo} alt="" />
-                    </div>
+                    
 
                 </div>
             </div>

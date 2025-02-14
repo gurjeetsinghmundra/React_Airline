@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 
 function FlightItems({ flightNumber, flightName, departureAirport, arrivalAirport,
-    departureTime, arrivalTime, availableSeats   ,flight_link ,onSelectFlight}) {
+    departureTime, arrivalTime, availableSeats   ,flight_link ,onSelectFlight,onDeleteFlight}) {
 
     const navigate=useNavigate()
 
 
-  const onSelectDelete = async(flight_id_link)=>{
-      const deletedFlight =await deleteFlight(flight_id_link)
-  }
+    const onSelectDelete = async (flight_id_link) => {
+        await deleteFlight(flight_id_link);
+        onDeleteFlight(); // Refresh the flight list
+    };
 
   const onSelectUpdate= async (link)=>{
     // console.log(link);  ( will show all flight id links)
@@ -27,8 +28,6 @@ function FlightItems({ flightNumber, flightName, departureAirport, arrivalAirpor
     return (
             
         <div>
-
-            
 
             <div className="flight-card">
                 <div className="card">

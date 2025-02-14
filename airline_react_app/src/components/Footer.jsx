@@ -30,8 +30,7 @@ function Footer() {
             <li><a href="#">Flights</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Seats</a></li>
-            <li><a href="#">Offers</a></li>
-            <li><a href="#">Destinations</a></li>
+         
 
 
           </ul>

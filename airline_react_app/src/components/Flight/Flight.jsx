@@ -60,17 +60,28 @@ function Flight() {
 
   return (
     <div>
-      <div>
+     
+      <h1 style={{ textAlign: 'center', color: 'darkblue' }}>All Flights</h1>
+
+      <div className='flightForm'>
         <FlightForm
           onAddFlight={refreshFlights}
           selectedFlight={selectedFlight}
           onUpdateFlight={refreshFlights}
+  
+        
+          
         />
       </div>
 
-      <h1 style={{ textAlign: 'center', color: 'darkblue' }}>All Flights</h1>
+
+      
+
+      <SearchFlight setSearchQuery={setSearchQuery} />
+
 
       <div className="dropdown ms-4">
+        <br />
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Sort Flight Schedule <span className="badge bg-secondary">{flights.length}</span>
         </button>
@@ -81,8 +92,6 @@ function Flight() {
           <li onClick={() => { sort(2) }}><a className="dropdown-item">Z-A</a></li>
         </ul>
       </div>
-
-      <SearchFlight setSearchQuery={setSearchQuery} />
 
       <div className="container-fluid">
         <br />
@@ -98,9 +107,10 @@ function Flight() {
                 arrivalAirport={f.arrivalAirport}
                 departureTime={f.departureTime}
                 arrivalTime={f.arrivalTime}
-                availableSeats={f.availableSeats}
+                // availableSeats={f.availableSeats}
                 onSelectFlight={handleSelectFlight}
                 flight_link={f._links?.self?.href} // Ensure safe access
+                onDeleteFlight={refreshFlights}  // 
               />
             </div>
           ))}

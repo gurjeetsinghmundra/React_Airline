@@ -9,7 +9,7 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
     arrivalAirport: '',
     departureTime: '',
     arrivalTime: '',
-    availableSeats: ''
+    // availableSeats: ''
   });
 
   const [showForm, setShowForm] = useState(false); // State to control form visibility
@@ -27,7 +27,7 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
       arrivalAirport: e.target.arrivalAirport.value,
       departureTime: e.target.departureTime.value,
       arrivalTime: e.target.arrivalTime.value,
-      availableSeats: e.target.availableSeats.value
+      // availableSeats: e.target.availableSeats.value
     }).then(data => {
       onAddFlight();
       setFlight({
@@ -37,14 +37,29 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
         arrivalAirport: '',
         departureTime: '',
         arrivalTime: '',
-        availableSeats: ''
+        // availableSeats: ''
       });
       return data;
     });
   };
 
+  // useEffect(() => {
+  //   if (selectedFlight) setFlight(selectedFlight);
+  // }, [selectedFlight]);
+
   useEffect(() => {
-    if (selectedFlight) setFlight(selectedFlight);
+    if (selectedFlight) {
+      setFlight(selectedFlight);
+    } else {
+      setFlight({
+        flightNumber: '',
+        flightName: '',
+        departureAirport: '',
+        arrivalAirport: '',
+        departureTime: '',
+        arrivalTime: '',
+      });
+    }
   }, [selectedFlight]);
 
   const handleChange = (e) => {
@@ -61,7 +76,7 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
       arrivalAirport: e.target.arrivalAirport.value,
       departureTime: e.target.departureTime.value,
       arrivalTime: e.target.arrivalTime.value,
-      availableSeats: e.target.availableSeats.value
+      // availableSeats: e.target.availableSeats.value
     }).then(data => {
       onUpdateFlight();
       setFlight({
@@ -71,9 +86,10 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
         arrivalAirport: '',
         departureTime: '',
         arrivalTime: '',
-        availableSeats: ''
+        // availableSeats: ''
       });
-      return data;
+      onUpdateFlight(null); // Reset selectedFlight so the form switches to Submit
+
     });
   };
 
@@ -91,38 +107,45 @@ function FlightForm({ onAddFlight, selectedFlight, onUpdateFlight }) {
 
           <div className="mb-3">
             <label className="form-label">Flight Number</label>
-            <input type="number" className="form-control" name='flightNumber' value={flight.flightNumber} onChange={handleChange} />
+            <input type="number" className="form-control" name='flightNumber'
+             value={flight.flightNumber} onChange={handleChange} />
           </div>
 
           <div className="mb-3">
             <label className="form-label">Flight Name</label>
-            <input type="text" className="form-control" name='flightName' value={flight.flightName} onChange={handleChange} />
+            <input type="text" className="form-control" name='flightName' 
+            value={flight.flightName} onChange={handleChange} required />
           </div>
 
           <div className="mb-3">
             <label className="form-label">Departure Airport</label>
-            <input type="text" className="form-control" name='departureAirport' value={flight.departureAirport} onChange={handleChange} />
+            <input type="text" className="form-control" name='departureAirport' 
+            value={flight.departureAirport} onChange={handleChange} required />
           </div>
 
           <div className="mb-3">
             <label className="form-label">Arrival Airport</label>
-            <input type="text" className="form-control" name='arrivalAirport' value={flight.arrivalAirport} onChange={handleChange} />
+            <input type="text" className="form-control" name='arrivalAirport'
+             value={flight.arrivalAirport} onChange={handleChange}  required/>
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Departure Time</label>
-            <input type="datetime-local" className="form-control" name='departureTime' value={flight.departureTime} onChange={handleChange} />
+            <label className="form-label">Departure Date&Time</label>
+            <input type="datetime-local" className="form-control" name='departureTime'
+             value={flight.departureTime} onChange={handleChange} required/>
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Arrival Time</label>
-            <input type="datetime-local" className="form-control" name='arrivalTime' value={flight.arrivalTime} onChange={handleChange} />
+            <label className="form-label">Arrival Date&Time</label>
+            <input type="datetime-local" className="form-control"
+             name='arrivalTime' value={flight.arrivalTime} onChange={handleChange} required/>
           </div>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label className="form-label">Available Seats</label>
-            <input type="number" className="form-control" name='availableSeats' value={flight.availableSeats} onChange={handleChange} />
-          </div>
+            <input type="number" className="form-control" name='availableSeats' 
+            value={flight.availableSeats} onChange={handleChange} />
+          </div> */}
 
           <button type="submit" className="btn btn-success">
             {selectedFlight ? "Update" : "Submit"}

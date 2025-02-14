@@ -56,7 +56,16 @@ function ShowingBooking() {
                 <tbody>
                     {seats.map((seat) => (
                       <Seat seatNumber={seat.seatNumber} occupied={seat.occupied} 
-                      passengerFirstName={seat.passengerFirstName}/>
+                      passengerFirstName={seat.passengerFirstName}
+                    //   
+                      passengerLastName={seat.passengerLastName}
+                      dateOfBirth={seat.dateOfBirth}
+                      gender={seat.gender}
+                      passportNumber={seat.passportNumber}
+                      nationality={seat.nationality}
+                      phoneNumber={seat.phoneNumber}
+                      address={seat.address}
+                      />
                     ))}
                 </tbody>
             </table>

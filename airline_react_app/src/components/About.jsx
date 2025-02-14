@@ -10,17 +10,17 @@ function About() {
       <p class="subheader">TRAVEL SUPPORT</p>
       <h2 class="section__header">Plan your travel with confidence</h2>
       <p class="description">
-        Find help with your bookings and travel plans, and seee what to expect
+        Find help with your bookings and travel plans, and see what to expect
         along your journey.
       </p>
       <div class="plan__grid">
         <div class="plan__content">
           <span class="number">01</span>
-          <h4>Travel Requirements for Dubai</h4>
+          <h4>Travel Requirements </h4>
           <p>
-            Stay informed and prepared for your trip to Dubai with essential
+            Stay informed and prepared for your trip with essential
             travel requirements, ensuring a smooth and hassle-free experience in
-            this vibrant and captivating city.
+            vibrant and captivating city.
           </p>
           <span class="number">02</span>
           <h4>Multi-risk travel insurance</h4>
